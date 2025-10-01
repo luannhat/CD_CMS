@@ -1,0 +1,56 @@
+/*
+Theme Name: Twenty Twenty-Five Child
+Theme URI: https://example.com/
+Description: Child theme for Twenty Twenty-Five
+Author: Bạn
+Author URI: https://example.com/
+Template: twentytwentyfive
+Version: 1.0.0
+Text Domain: twentytwentyfive-child
+*/
+.quick-link {
+    display: flex;
+    justify-content: space-around; /* canh đều khoảng cách giữa các cột */
+    gap: 40px; /* tạo khoảng cách đồng đều */
+    margin-bottom: 30px;
+    color: white;
+	margin-left: 200px;
+	align-items: flex-start;
+}	
+
+.quick-link > div {
+    flex: 1; /* các cột sẽ có chiều rộng bằng nhau */
+}
+
+.quick-link h2 {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-left: 10px;/* chừa khoảng cách giữa chữ và cột */
+    height: 203px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px; /* chừa khoảng cách giữa chữ và cột */
+}
+
+.quick-link h5 {
+    margin: 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+.quick-link h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;       /* độ dày cột */
+    height: 100%;     /* cao bằng chữ */
+    background: white; /* màu cột dọc */
+	transition: all 0.3s ease;
+}
+.quick-link h5:hover{
+	 transform: translateX(5px);
+     color: #fff; /* tô đậm hơn khi hover */
+     font-weight: bold;
+}
