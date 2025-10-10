@@ -51,7 +51,7 @@ if ( ! function_exists( 'twentytwentyfive_enqueue_styles' ) ) :
 	function twentytwentyfive_enqueue_styles() {
 		wp_enqueue_style(
 			'twentytwentyfive-style',
-			get_parent_theme_file_uri( 'style.css' ),
+			get_parent_theme_file_uri( 'custom.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
