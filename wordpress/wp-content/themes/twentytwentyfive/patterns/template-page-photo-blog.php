@@ -26,3 +26,8 @@
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer"} /-->
+<?php
+/**
+ * Template Name: Blog Template
+ */
+

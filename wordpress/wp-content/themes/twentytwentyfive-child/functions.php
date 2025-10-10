@@ -1,13 +1,12 @@
 <?php
-// Load CSS từ parent & child theme
-function twentytwentyfive_child_enqueue_styles() {
-    // style cha
+function ttfive_child_enqueue_styles() {
+    // Gọi CSS của theme gốc
     wp_enqueue_style(
         'parent-style',
         get_template_directory_uri() . '/style.css'
     );
 
-    // style con
+    // Gọi CSS của theme con
     wp_enqueue_style(
         'child-style',
         get_stylesheet_directory_uri() . '/style.css',
@@ -15,18 +14,26 @@ function twentytwentyfive_child_enqueue_styles() {
         wp_get_theme()->get('Version')
     );
 }
-add_action('wp_enqueue_scripts', 'twentytwentyfive_child_enqueue_styles');
+add_action('wp_enqueue_scripts', 'ttfive_child_enqueue_styles');
 
-// Đăng ký khu vực widget cho footer
-function mytheme_register_footer_widget() {
-    register_sidebar(array(
-        'name'          => __('Custom Footer Widget', 'twentytwentyfive-child'),
-        'id'            => 'custom-footer-widget',
-        'description'   => __('Widget hiển thị ở footer', 'twentytwentyfive-child'),
-        'before_widget' => '<div class="footer-widget">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h2 class="footer-widget-title">',
-        'after_title'   => '</h2>',
-    ));
+//
+if ( ! function_exists( 'twentytwentyfive_post_format_setup' ) ) :
+	/**
+	 * Adds theme support for post formats.
+	 *
+	 * @since Twenty Twenty-Five 1.0
+	 *
+	 * @return void
+	 */
+	function twentytwentyfive_post_format_setup() {
+		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
+	}
+endif;
+add_action( 'after_setup_theme', 'twentytwentyfive_post_format_setup' );
+
+// Kích hoạt tính năng post formats cho blog
+function ttfive_child_theme_setup() {
+    add_theme_support('post-thumbnails'); // ảnh đại diện
+    add_theme_support('post-formats', array('image', 'video', 'quote', 'gallery'));
 }
-add_action('widgets_init', 'mytheme_register_footer_widget');
+add_action('after_setup_theme', 'ttfive_child_theme_setup');

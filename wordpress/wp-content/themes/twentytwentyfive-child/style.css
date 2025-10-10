@@ -8,10 +8,11 @@ Template: twentytwentyfive
 Version: 1.0.0
 Text Domain: twentytwentyfive-child
 */
+
 .quick-link {
     display: flex;
-    justify-content: space-around; /* canh đều khoảng cách giữa các cột */
-    gap: 40px; /* tạo khoảng cách đồng đều */
+    justify-content: space-around; 
+    gap: 40px; 
     margin-bottom: 30px;
     color: white;
 	margin-left: 200px;
@@ -19,7 +20,7 @@ Text Domain: twentytwentyfive-child
 }	
 
 .quick-link > div {
-    flex: 1; /* các cột sẽ có chiều rộng bằng nhau */
+    flex: 1; 
 }
 
 .quick-link h2 {
@@ -27,11 +28,11 @@ Text Domain: twentytwentyfive-child
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
-    padding-left: 10px;/* chừa khoảng cách giữa chữ và cột */
+    padding-left: 10px;
     height: 203px;
     display: flex;
     align-items: center;
-    padding-left: 10px; /* chừa khoảng cách giữa chữ và cột */
+    padding-left: 10px; 
 }
 
 .quick-link h5 {
@@ -44,13 +45,25 @@ Text Domain: twentytwentyfive-child
     position: absolute;
     left: 0;
     top: 0;
-    width: 3px;       /* độ dày cột */
-    height: 100%;     /* cao bằng chữ */
-    background: white; /* màu cột dọc */
+    width: 3px;       
+    height: 100%;     
+    background: white; 
 	transition: all 0.3s ease;
 }
-.quick-link h5:hover{
-	 transform: translateX(5px);
-     color: #fff; /* tô đậm hơn khi hover */
-     font-weight: bold;
+.quick-link h5:hover {
+    transform: translateX(5px);
+    color: #ffffff ; 
+    font-weight: bold ;
+}
+/* Phóng to toàn bộ icon social trong footer */
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+    width: 40px ;
+    height: 40px ;
+    transition: all 0.3s ease;
+}
+
+/* Khi hover: phóng to thêm chút */
+.wp-block-social-links.is-style-logos-only .wp-social-link:hover svg {
+    transform: scale(2) ;
+    fill: #eeeeee ;
 }
