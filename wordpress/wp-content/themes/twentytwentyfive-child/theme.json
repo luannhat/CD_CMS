@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "styles": {
+    "blocks": {
+      "core/heading": {
+        "color": {
+          "text": "#ffffff"
+        }
+      },
+      "core/social-links": {
+        "elements": {
+          "link": {
+            "color": {
+              "text": "#ffffff"
+            }
+          }
+        }
+      }
+    }
+  }
+}
